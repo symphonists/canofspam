@@ -1,9 +1,9 @@
 Filter: Can Of Spam
 -------------------------------------------------------------------------------
 
-Version: 1.003
-Author: Rowan Lewis <rowan@pixelcarnage.com>
-Build Date: 18 February 2009
+Version: 1.0.4
+Author: Rowan Lewis <me@rowanlewis.com>
+Build Date: 9 December 2009
 Requirements: Symphony 2.0.1
 
 

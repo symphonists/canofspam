@@ -8,12 +8,12 @@
 		public function about() {
 			return array(
 				'name'			=> 'Can Of Spam',
-				'version'		=> '1.003',
-				'release-date'	=> '2009-02-18',
+				'version'		=> '1.0.4',
+				'release-date'	=> '2009-12-09',
 				'author'		=> array(
 					'name'			=> 'Rowan Lewis',
-					'website'		=> 'http://pixelcarnage.com/',
-					'email'			=> 'rowan@pixelcarnage.com'
+					'website'		=> 'http://rowanlewis.com/',
+					'email'			=> 'me@rowanlewis.com'
 				),
 				'description'	=> 'Protect your forms against spam with a hidden field.'
 			);
