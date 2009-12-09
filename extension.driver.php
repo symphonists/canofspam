@@ -158,7 +158,7 @@
 		}
 		
 		public function appendEventFilterDocumentation($context) {
-			if (@!in_array('canofspam', $context['selected'])) return;
+			if (!is_array($context['selected']) or !in_array('canofspam', $context['selected'])) return;
 			
 			$context['documentation'][] = new XMLElement('h3', 'Can Of Spam Filter');
 			
