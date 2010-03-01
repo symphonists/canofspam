@@ -52,22 +52,22 @@
 		// append filter to event editor
 
 		public function appendEventFilter($context) {
-
-			$context['options'][] = array('canofspam', 
-			                              is_array($context['selected']) && in_array('canofspam', $context['selected']),
-			                              'Can Of Spam');
+			$context['options'][] = array(
+				'canofspam', 
+				is_array($context['selected']) && in_array('canofspam', $context['selected']),
+				__('Can Of Spam')
+			);
 		}
 
 		// append filter documentation to event editor
 		
 		public function appendEventFilterDocumentation($context) {
-			
 			if (is_array($context['selected']) && in_array('canofspam', $context['selected'])) {
-				
-				$context['documentation'][] = new XMLElement('h3', 'Can Of Spam Filter');				
-				$context['documentation'][] = new XMLElement('p', 'To use the Can Of Spam filter, add the Can Of Spam event to your page and the following field to your form:');
-				$context['documentation'][] = contentBlueprintsEvents::processDocumentationCode(				
-
+				$context['documentation'][] = new XMLElement('h3', __('Can Of Spam Filter'));
+				$context['documentation'][] = new XMLElement('p', __(
+					'To use the Can Of Spam filter, add the Can Of Spam event to your page and the following field to your form:')
+				);
+				$context['documentation'][] = contentBlueprintsEvents::processDocumentationCode(
 					'<input name="canofspam" value="{$canofspam}" type="hidden" />'
 				);
 			}
@@ -82,17 +82,18 @@
 				if ($_POST['canofspam'] == $_SESSION['canofspam']) {
 
 					// valid
-
 					$context['messages'][] = array('canofspam', true, null);
 
 				} else {
 
 					// not valid
-					
-					$context['messages'][] = array('canofspam', false, 'Data was identified as spam.');
+					$context['messages'][] = array(
+						'canofspam',
+						false,
+						__('Data was identified as spam.')
+					);
 					
 					// clear session data
-					
 					unset($_SESSION['canofspam']);
 				}
 			}
@@ -103,7 +104,6 @@
 		public function eventPostSaveFilter($context) {
 
 			// clear session data
-			
 			unset($_SESSION['canofspam']);
 		}		
 	}
