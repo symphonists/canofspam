@@ -20,17 +20,17 @@
 		}
 		
 		public function uninstall() {
-			$this->_Parent->Configuration->remove('canofspam');
-			$this->_Parent->saveConfig();
+			Symphony::Configuration()->remove('canofspam');
+			Administration::instance()->saveConfig();
 			
-			$this->_Parent->Database->query("DROP TABLE `tbl_canofspam_tracking`");
+			Symphony::Database()->query("DROP TABLE `tbl_canofspam_tracking`");
 		}
 		
 		public function install() {
-			$this->_Parent->Configuration->set('uniqueid', md5(time()), 'canofspam');
-			$this->_Parent->saveConfig();
+			Symphony::Configuration()->set('uniqueid', md5(time()), 'canofspam');
+			Administration::instance()->saveConfig();
 			
-			$this->_Parent->Database->query("
+			Symphony::Database()->query("
 				CREATE TABLE IF NOT EXISTS `tbl_canofspam_tracking` (
 					`id` int(11) NOT NULL auto_increment,
 					`client` varchar(32) NOT NULL,
@@ -94,7 +94,7 @@
 	-------------------------------------------------------------------------*/
 		
 		public function getUniqueId() {
-			return $this->_Parent->Configuration->get('uniqueid', 'canofspam');
+			return Symphony::Configuration()->get('uniqueid', 'canofspam');
 		}
 		
 		public function getClientId() {
@@ -102,11 +102,10 @@
 		}
 		
 		public function getFormId() {
-			$db = $this->_Parent->Database;
 			$client = $this->getClientId();
 			
 			// Find existing:
-			$form = $db->fetchVar('form', 0, "
+			$form = Symphony::Database()->fetchVar('form', 0, "
 				SELECT
 					t.*
 				FROM
@@ -119,7 +118,7 @@
 			if (empty($form)) {
 				$form = md5($this->getUniqueId() . '-' . time());
 				
-				$db->query("
+				Symphony::Database()->query("
 					INSERT INTO
 						`tbl_canofspam_tracking`
 					SET
@@ -132,10 +131,9 @@
 		}
 		
 		public function clearFormId() {
-			$db = $this->_Parent->Database;
 			$client = $this->getClientId();
 			
-			$db->query("
+			Symphony::Database()->query("
 				DELETE FROM
 					`tbl_canofspam_tracking`
 				WHERE
