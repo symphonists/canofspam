@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="canofspam" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Can Of Spam</name>
+	<description>Protect your forms against spam with a hidden hash-validation-field.</description>
+	<repo type="github">https://github.com/symphonists/canofspam</repo>
+	<url type="discuss">http://symphony-cms.com/discuss/thread/386/</url>
+	<types>
+		<type>Event</type>
+		<type>Filter</type>
+		<type>Spam Protection</type>
+	</types>
+	<authors>
+		<author>
+			<name github="symphonists" symphony="community">Symphony Community</name>
+			<website>https://github.com/symphonists/</website>
+		</author>
+	</authors>
+	<dependencies>
+		<!-- None -->
+	</dependencies>
+	<releases>  
+		<release version="2.0" date="2012-06-18" min="2.3.x">
+			- Compatible with Symphony 2.3
+			- Completely rewritten and simplified
+		</release>
+	</releases>
+</extension>
