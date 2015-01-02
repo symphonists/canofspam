@@ -15,11 +15,11 @@
 			<website>https://github.com/symphonists/</website>
 		</author>
 	</authors>
-	<dependencies>
-		<!-- None -->
-	</dependencies>
-	<releases>  
-		<release version="2.0" date="2012-06-18" min="2.3.x">
+	<releases>
+		<release version="2.1" date="2015-01-02" min="2.5.0">
+			- Compatible with Symphony 2.5+
+		</release>
+		<release version="2.0" date="2012-06-18" min="2.3.x" max="2.4.x">
 			- Compatible with Symphony 2.3
 			- Completely rewritten and simplified
 		</release>

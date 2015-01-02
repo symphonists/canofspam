@@ -41,7 +41,7 @@
 			if(version_compare($previousVersion, '2.0', '<')){
 
 				Symphony::Configuration()->remove('canofspam');
-				Administration::instance()->saveConfig();
+				Symphony::Configuration()->write();
 			
 				Symphony::Database()->query("DROP TABLE `tbl_canofspam_tracking`");
 			}
