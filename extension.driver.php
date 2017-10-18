@@ -36,7 +36,7 @@
 
 		// update old versions
 
-		public function update($previousVersion){
+		public function update($previousVersion = false){
 
 			if(version_compare($previousVersion, '2.0', '<')){
 
