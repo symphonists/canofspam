@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension id="canofspam" status="released" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+<extension id="canofspam" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
 	<name>Can Of Spam</name>
 	<description>Protect your forms against spam with a hidden hash-validation-field.</description>
 	<repo type="github">https://github.com/symphonists/canofspam</repo>
-	<url type="discuss">http://symphony-cms.com/discuss/thread/386/</url>
+	<url type="discuss">https://www.getsymphony.com/discuss/thread/386/</url>
 	<types>
 		<type>Event</type>
 		<type>Filter</type>
@@ -16,7 +16,7 @@
 		</author>
 	</authors>
 	<releases>
-	  <release version="2.2" date="2017-05-22" min="2.5.0">
+		<release version="2.2.0" date="2017-05-22" min="2.5.0" max="2.x.x">
 			- Compatible with PHP 7
 		</release>
 		<release version="2.1" date="2015-01-02" min="2.5.0">
